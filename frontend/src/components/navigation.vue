@@ -1,29 +1,29 @@
     <template>
         <div class="navbar">
+
     <div class="sidebar" :style="{ width: sidebarWidth + 'px' }">
-  
-    <button class="close-btn" @click="closeNav">&times;</button>
+    <button class="close-btn" @click="closeNav">&times;</button><br><br>
+    <!-- <div class="greeting">
+      <h4>.  </h4>
+    </div> -->
     <router-link to="/" class="sidebar-link">Home</router-link>
     <router-link to="/about" class="sidebar-link">About</router-link>
     <router-link to="/products" class="sidebar-link">Products</router-link>
-    <router-link to="/checkout" class="sidebar-link">Checkout</router-link>
-    <router-link to="/admin" class="sidebar-link">Admin</router-link>
-    <router-link to="/login" class="sidebar-link">Login</router-link>
-    <router-link to="/signup" class="sidebar-link">Sign Up</router-link>
+    <router-link to="/products" class="sidebar-link">Checkout</router-link>
+    <router-link to="/products" class="sidebar-link">Admin</router-link>
+    <router-link to="/products" class="sidebar-link">Login</router-link>
+    <router-link to="/products" class="sidebar-link">Sign Up</router-link>
     <router-link to="/contact" class="sidebar-link">Contact</router-link>
     </div>
-    
     <div class="content" :style="{ marginLeft: contentMargin + 'px' }">
     <div class="navbar">
         <button class="open-btn" @click="openNav">&#9776;</button>
     </div>
     </div>
-    <router-link to="/" class="logo-link">
-      <img src="https://cdn-thumbs.imagevenue.com/f4/1f/19/ME17R5RB_t.png" alt="Logo" class="logo-img">
-    </router-link>
-    <router-view/>
+    <div class="logo-container">
+        <img src="https://i.postimg.cc/kGLpVP38/thelogo.png" alt="Logo" class="logo-img">
     </div>
-    
+    </div>
     </template>
 
     <script>
@@ -57,14 +57,17 @@ export default {
 };
 </script>
 
-  <style scoped>
+  <style>
   .navbar {
   display: flex;
   justify-content: flex-start; /* Align items to the left */
   align-items: center; /* Center vertically */
 }
 .open-btn{
-    color: #FFFFFF;
+    color: #000000;/*color of open btn */
+}
+.greeting{ 
+  color: #f9dfdf;
 }
   body {
     font-family: Arial, sans-serif;
@@ -111,7 +114,7 @@ export default {
     background: none;
   }
   .open-btn:hover {
-    color: #007BFF;
+    color: #000000;
   }
   .sidebar {
     height: 100%;
@@ -139,8 +142,8 @@ export default {
     color: #ccc;
   }
   .navbar {
-    background-color: #dc84a6; /* Dark color for the navbar background */
-    padding: 0.5rem 1rem; /* Add padding to the navbar */
+    background-color: #ffffff; /* Dark color for the navbar background */
+    padding: 0.5rem 0.1rem; /* Add padding to the navbar */
   }
   .navbar-brand {
     margin-right: auto; /* Make the brand logo push to the left */
@@ -165,12 +168,11 @@ export default {
   .router-link-exact-active .nav-link {
     color: #c3b6b6; /* White color for the active link text */
   }
-  .logo-img {
-    height: 50px; /* Set the height of the logo */
-    width: 220px;
-    margin-right: 10px;
-    margin-left: 10px; /* Optional: Add some space between the logo and the links */
-    
+  .logo-container {
+    height: auto; /* Set the height of the logo */
+    width: 250px;
+    margin-right: auto;
+    margin-left: auto; /* Optional: Add some space between the logo and the links */
   }
   /* Adjust navbar for medium and small devices (<992px) */
   @media (max-width: 991.98px) {
