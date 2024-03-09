@@ -9,7 +9,7 @@
 <script>
 import navigation from '@/components/navigation.vue'
 import Footer from '@/components/footer'
-import spinner from './components/spinner.vue';
+import spinner from '@/components/spinner.vue';
 
 export default {
   components: {
