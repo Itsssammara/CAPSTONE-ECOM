@@ -1,22 +1,29 @@
     <template>
         <div class="navbar">
     <div class="sidebar" :style="{ width: sidebarWidth + 'px' }">
+  
     <button class="close-btn" @click="closeNav">&times;</button>
     <router-link to="/" class="sidebar-link">Home</router-link>
     <router-link to="/about" class="sidebar-link">About</router-link>
     <router-link to="/products" class="sidebar-link">Products</router-link>
-    <router-link to="/products" class="sidebar-link">Checkout</router-link>
-    <router-link to="/products" class="sidebar-link">Admin</router-link>
-    <router-link to="/products" class="sidebar-link">Login</router-link>
-    <router-link to="/products" class="sidebar-link">Sign Up</router-link>
+    <router-link to="/checkout" class="sidebar-link">Checkout</router-link>
+    <router-link to="/admin" class="sidebar-link">Admin</router-link>
+    <router-link to="/login" class="sidebar-link">Login</router-link>
+    <router-link to="/signup" class="sidebar-link">Sign Up</router-link>
     <router-link to="/contact" class="sidebar-link">Contact</router-link>
     </div>
+    
     <div class="content" :style="{ marginLeft: contentMargin + 'px' }">
     <div class="navbar">
         <button class="open-btn" @click="openNav">&#9776;</button>
     </div>
     </div>
+    <router-link to="/" class="logo-link">
+      <img src="https://cdn-thumbs.imagevenue.com/f4/1f/19/ME17R5RB_t.png" alt="Logo" class="logo-img">
+    </router-link>
+    <router-view/>
     </div>
+    
     </template>
 
     <script>
@@ -159,10 +166,11 @@ export default {
     color: #c3b6b6; /* White color for the active link text */
   }
   .logo-img {
-    height: 40px; /* Set the height of the logo */
-    width: 50px;
+    height: 50px; /* Set the height of the logo */
+    width: 220px;
     margin-right: 10px;
     margin-left: 10px; /* Optional: Add some space between the logo and the links */
+    
   }
   /* Adjust navbar for medium and small devices (<992px) */
   @media (max-width: 991.98px) {

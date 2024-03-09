@@ -16,3 +16,8 @@ export default {
   }
 }
 </script>
+<style>
+h1{
+  font-family: monospace;
+}
+</style>
