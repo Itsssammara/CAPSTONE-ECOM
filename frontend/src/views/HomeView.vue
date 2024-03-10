@@ -2,7 +2,9 @@
   <div class="container">
     <div class="title">
       <h1>Elavating Modesty, <br>Embracing Elegance</h1>
-      <button>SHOP NOW</button>
+      <router-link to="/products">
+      <button class="big-button">Shop Now</button>
+    </router-link>
     </div>
   </div>
 </template>
@@ -49,7 +51,7 @@ export default {
 
 @media (max-width: 390px) {
   .container .title h1 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       padding: 0.25rem;
     }
   }
