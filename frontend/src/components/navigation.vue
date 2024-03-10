@@ -1,5 +1,7 @@
     <template>
-       
+    <div>
+      <p class="header-sml">FREE SHIPPING ON ORDERS OVER R400</p>
+    </div>
     <div class="sidebar" :style="{ width: sidebarWidth + 'px' }">
     <button class="close-btn" @click="closeNav">&times;</button><br><br>
     <router-link to="/" class="sidebar-link">Home</router-link>
@@ -56,6 +58,14 @@ export default {
 </script>
 
   <style>
+  .header-sml {
+    text-align: center;
+    background-color: rgb(240, 82, 82);
+    color: #fff;
+    font-size: x-small;
+    padding: 5px;
+    margin: 0px;
+  }
   .navbar {
   display: flex;
   justify-content: flex-start; /* Align items to the left */
