@@ -1,13 +1,13 @@
 <template>
-    <div class="background-image">
-      <img src="https://i.postimg.cc/J4KV8F7g/hoosenhijab3women.png" alt="">
-      
+  <div class="container">
+    <div class="title">
+      <h1>Elavating Modesty, <br>Embracing Elegance</h1>
+      <button>SHOP NOW</button>
     </div>
-  
+  </div>
 </template>
 
 <script>
-
 export default {
   name: 'HomeView',
   components: {
@@ -17,28 +17,40 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  margin-top: 80px;
+.container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 95vh; /* Adjust as needed */
+  background-image: url('https://i.postimg.cc/J4KV8F7g/hoosenhijab3women.png');
+  background-size: cover; /* Adjusts the background image to cover the entire container */
+  background-position: center; /* Centers the background image */
+}
+.container .title h1 {
+  color: white;
+  font-size: 4rem;
+  font-family: poppins;
+  text-align: center; /* Center text horizontally */
+  -webkit-text-stroke: 1px rgb(51, 18, 18); /* Border outline */
 }
 
-.background-image {
-  /* background-image: url('https://i.postimg.cc/J4KV8F7g/hoosenhijab3women.png'); */
-  /* background-size: cover;
-  background-position: center; */
-  /* min-height: calc(100vh - 80px);  */
-  /* width: 100%; */
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
+.container button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease;
+}
+.container button:hover {
+  box-shadow: 0 0 10px white; /* Glow effect on hover */
 }
 
-h1 {
-  font-family: monospace;
-  color: #000000; /* Optional: Adjust font color */
-  text-align: center; /* Center the text */
-  margin-bottom: 20px; /* Optional: Adjust spacing */
-}
+@media (max-width: 390px) {
+  .container .title h1 {
+      font-size: 2.5rem;
+      padding: 0.25rem;
+    }
+  }
 </style>

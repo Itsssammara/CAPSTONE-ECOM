@@ -18,9 +18,8 @@
         <img src="https://i.postimg.cc/kGLpVP38/thelogo.png" alt="Logo" class="logo-img">
     </div>
     </div>
-
     </div>
-  
+    
     <router-view/>
     
     </template>
@@ -61,13 +60,12 @@ export default {
   display: flex;
   justify-content: flex-start; /* Align items to the left */
   align-items: center; /* Center vertically */
-}
+  }
 .open-btn{
-    color: #ffffff;/*color of open btn */
+    color: #000000;/*color of open btn */
+    margin-left: 20px;
 }
-.greeting{ 
-  color: #f9dfdf;
-}
+
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -104,7 +102,7 @@ export default {
   }
   .content {
     transition: margin-left 0.5s;
-    padding: 16px;
+    padding: 5px;
   }
   .open-btn {
     font-size: 20px;
@@ -141,7 +139,7 @@ export default {
     color: #ccc;
   }
   .navbar {
-    background-color: #000000; /* Dark color for the navbar background */
+    background-color: #ffffff; /* Dark color for the navbar background */
     padding: 0.5rem 0.1rem; /* Add padding to the navbar */
   }
   .navbar-brand {
@@ -179,8 +177,8 @@ export default {
 .logo-img {
   height: 40px; /* Set the height of the logo */
   width: auto; /* Allow the width to adjust automatically */
-  margin-right: 10px; /* Optional: Adjust margin right */
-  margin-left: 10px; /* Optional: Adjust margin left */
+  margin-right: 90px; /* Optional: Adjust margin right */
+  margin-left: 30px; /* Optional: Adjust margin left */
 }
 
   /* Adjust navbar for medium and small devices (<992px) */
@@ -194,7 +192,7 @@ export default {
     .logo-img {
       margin-top: 2px;
       height: 30px;
-      width: 40px;
+      width: 170px;
     }
   }
   /* Very small devices (<= 390px) */
