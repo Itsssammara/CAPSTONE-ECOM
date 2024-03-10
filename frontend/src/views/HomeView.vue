@@ -33,7 +33,7 @@ export default {
   font-size: 4rem;
   font-family: poppins;
   text-align: center; /* Center text horizontally */
-  -webkit-text-stroke: 1px rgb(51, 18, 18); /* Border outline */
+  /* -webkit-text-stroke: 1px rgb(51, 18, 18); Border outline */
 }
 
 .container button {
