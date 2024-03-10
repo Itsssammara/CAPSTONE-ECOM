@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="title">
-      <h1>Elavating Modesty, <br>Embracing Elegance</h1>
+      <h1>Elevating Modesty, <br>Embracing Elegance...</h1>
       <router-link to="/products">
       <button class="big-button">Shop Now</button>
     </router-link>
