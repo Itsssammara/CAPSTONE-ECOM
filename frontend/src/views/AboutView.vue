@@ -10,7 +10,7 @@
 <style>
 .container{
   color: black;
-  font-family: poppins ;
+  font-family: 'Crimson Text';font-size: 22px;
 }
 .container img{
   width: 100vw; /* Set the width to 100% of the viewport width */

@@ -11,7 +11,7 @@ export default createStore({
   state: {
     users: null,
     user: null,
-    products: null,
+    products: [],
     product: null,
   },
   getters: {
@@ -171,6 +171,7 @@ export default createStore({
       async fetchProducts(context) {
         try {
           let { results } = (await axios.get(`${baseURL}products`)).data;
+          console.log(results);
           if (results) {
             context.commit("setProducts", results);
           }
