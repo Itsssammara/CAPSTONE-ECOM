@@ -28,7 +28,7 @@
   box-sizing:border-box;
 }
 .login{
-  background-color: rgb(217, 138, 69);
+  background-color: rgb(226, 165, 112);
   height: 100vh;
 }
 .login form{
