@@ -1,6 +1,7 @@
 import {config} from "dotenv"
 config()
 import jwt from "jsonwebtoken"
+
 function createToken(user) {
     return jwt.sign({
         emailAdd:user.emailAdd,
