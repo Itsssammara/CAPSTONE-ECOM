@@ -9,7 +9,7 @@
           </div>
       </div>
       <div class="row" v-if="products">
-          <Card v-for="product in products" :key="product.prodID">
+          <card v-for="product in products" :key="product.prodID">
               <template #card-header>
                   <h4 class="card-title">{{ product.prodName }}</h4>
               </template>
@@ -21,7 +21,7 @@
                   </p>
                   <router-link class="btn buttonPad" :to="{name: 'product', params: {id: product.prodID}}">View More</router-link>
               </template>
-          </Card>
+          </card>
       </div>
       <div class="row" v-else>
           <p class="lead">Loading...</p>
@@ -48,6 +48,10 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  background-color: #e9abc4;
+  height: 100vh;
+}
 img{
   width: 200px;
   aspect-ratio: 1/1.25;
