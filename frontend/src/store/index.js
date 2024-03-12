@@ -1,15 +1,17 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 import axios from "axios";
 import sweet from "sweetalert";
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 import router from "@/router";
+import AuthenticateUser from "../service/AuthenticateUser";
+const baseURL = "https://capstone-ecom-1.onrender.com/";
 
 export default createStore({
   state: {
     users: null,
     user: null,
-    products: null,
+    products: [],
     product: null,
   },
   getters: {
@@ -32,7 +34,7 @@ export default createStore({
     async register(context, packet) {
       try {
         let {message} = await (
-          await axios.post(`${blueURL}users/register`, packet))
+          await axios.post(`${baseURL}users/register`, packet))
           .data;
         console.log(message);
           context.dispatch("fetchUsers");
@@ -53,7 +55,7 @@ export default createStore({
       },
       async fetchUsers(context) {
         try {
-          let { results } = (await axios.get(`${blueURL}users`)).data;
+          let { results } = (await axios.get(`${baseURL}users`)).data;
           if (results) {
             context.commit("setUsers", results);
           }
@@ -68,7 +70,7 @@ export default createStore({
       },
       async fetchUser(context, packet) {
         try {
-          let { result } = (await axios.get(`${blueURL}users/${packet.id}`)).data;
+          let { result } = (await axios.get(`${baseURL}users/${packet.id}`)).data;
           if (result) {
             context.commit("setUser", result);
           } else {
@@ -90,7 +92,7 @@ export default createStore({
       },
       async updateUser(context, packet) {
         try {
-          let { msg } = await axios.patch(`${blueURL}users/update/${packet.id}`);
+          let { msg } = await axios.patch(`${baseURL}users/update/${packet.id}`);
           if (msg) {
             context.dispatch("fetchUsers");
             sweet({
@@ -111,7 +113,7 @@ export default createStore({
       },
       async deleteUser({ commit, dispatch }, packet) {
         try {
-          await axios.delete(`${blueURL}users/delete/${packet.id}`);
+          await axios.delete(`${baseURL}users/delete/${packet.id}`);
           commit("setUsers");
           dispatch("fetchUsers");
           sweet({
@@ -131,7 +133,7 @@ export default createStore({
       async login(context, packet) {
         try {
           const { msg, token, result } = (
-            await axios.post(`${blueURL}users/login`, packet)
+            await axios.post(`${baseURL}users/login`, packet)
           ).data;
           if (result) {
             context.commit("setUser", { msg, result });
@@ -168,7 +170,8 @@ export default createStore({
       },
       async fetchProducts(context) {
         try {
-          let { results } = (await axios.get(`${blueURL}products`)).data;
+          let { results } = (await axios.get(`${baseURL}products`)).data;
+          console.log(results);
           if (results) {
             context.commit("setProducts", results);
           }
@@ -183,7 +186,7 @@ export default createStore({
       },
       async fetchProduct(context, packet) {
         try {
-          let { result } = (await axios.get(`${blueURL}products/${packet?.id}`))
+          let { result } = (await axios.get(`${baseURL}products/${packet?.id}`))
             .data;
           if (result) {
             context.commit("setProduct", result);
@@ -206,7 +209,7 @@ export default createStore({
       },
       async deleteProduct({ commit, dispatch }, packet) {
         try {
-          await axios.delete(`${blueURL}products/delete/${packet.id}`);
+          await axios.delete(`${baseURL}products/delete/${packet.id}`);
           commit("setProducts");
           dispatch("fetchProducts");
           sweet({
@@ -226,7 +229,7 @@ export default createStore({
       async addProduct(context, packet) {
         try {
           let {message} = await (
-            await axios.post(`${blueURL}products/addProduct`, packet)
+            await axios.post(`${baseURL}products/addProduct`, packet)
           ).data;
           console.log(message);
             context.dispatch("fetchProducts");

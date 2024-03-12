@@ -30,8 +30,12 @@ export default {
 }
 .container .title h1 {
   color: white;
+
+  font-size: 4rem;
+
   font-size: 2rem;
   font-family: 'Pacifico';font-size: 50px;
+
   text-align: center; /* Center text horizontally */
   /* -webkit-text-stroke: 1px rgb(51, 18, 18); Border outline */
 }

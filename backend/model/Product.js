@@ -41,7 +41,7 @@ import {connection as db} from "../config/index.js"
         if(err) throw err
         res.json({
           status: res.statusCode,
-          msg:'Product was delete!'
+          msg:'Product was deleted!'
         })
       })
   }
