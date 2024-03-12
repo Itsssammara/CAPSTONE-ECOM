@@ -1,6 +1,6 @@
 <template>
 <div class="footer">
-  <p>Modest Elegance@2024</p>
+  <p>Modest Elegance &copy2024. All rights reserved.</p>
 </div>
 </template>
 <script>
